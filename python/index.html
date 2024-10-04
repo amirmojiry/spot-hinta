@@ -1,0 +1,19 @@
+<button onclick="runScript('code.py')">Run Code Script</button>
+<button onclick="runScript('simple_code.py')">Run Simple Script</button>
+<pre id="output"></pre>
+
+<script>
+    function runScript(script) {
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'script=' + encodeURIComponent(script)
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('output').innerHTML = data;
+        })
+    }
+</script>
