@@ -4,25 +4,28 @@ metadata:
   name: cpp-service
   namespace: energy-fetcher
   labels:
-    app: cpp-service
+    app: myapp
+    language: cpp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: cpp-service
+      app: myapp
+      language: cpp
   template:
     metadata:
       labels:
-        app: cpp-service
+        app: myapp
+        language: cpp
     spec:
       containers:
       - name: cpp-container
         image: yourregistry/myapp-cpp:latest
         env:
         - name: SCRIPT
-          value: "code" # Change to "simple_code" as needed
+          value: "code" # Change to "simple_code" if needed
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"

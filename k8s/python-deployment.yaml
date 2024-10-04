@@ -4,22 +4,25 @@ metadata:
   name: python-service
   namespace: energy-fetcher
   labels:
-    app: python-service
+    app: myapp
+    language: python
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: python-service
+      app: myapp
+      language: python
   template:
     metadata:
       labels:
-        app: python-service
+        app: myapp
+        language: python
     spec:
       containers:
       - name: python-container
         image: yourregistry/myapp-python:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"

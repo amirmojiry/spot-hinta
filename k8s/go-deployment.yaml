@@ -4,25 +4,28 @@ metadata:
   name: go-service
   namespace: energy-fetcher
   labels:
-    app: go-service
+    app: myapp
+    language: go
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: go-service
+      app: myapp
+      language: go
   template:
     metadata:
       labels:
-        app: go-service
+        app: myapp
+        language: go
     spec:
       containers:
       - name: go-container
         image: yourregistry/myapp-go:latest
         env:
         - name: SCRIPT
-          value: "code" # Change to "simple_code" as needed
+          value: "code" # Change to "simple_code" if needed
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
