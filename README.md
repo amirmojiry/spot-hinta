@@ -2,7 +2,7 @@
 
 This project consists of three services written in Python, Go, and C++.
 
-Each service fetches energy prices from the [Spot Hinta API](https://api.spot-hinta.fi).
+Each service fetches energy prices from the [Spot Hinta API](https://api.spot-hinta.fi/swagger/ui).
 
 
 
