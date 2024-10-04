@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-service
+  namespace: energy-fetcher
+  labels:
+    app: cpp-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cpp-service
+  template:
+    metadata:
+      labels:
+        app: cpp-service
+    spec:
+      containers:
+      - name: cpp-container
+        image: yourregistry/myapp-cpp:latest
+        env:
+        - name: SCRIPT
+          value: "code" # Change to "simple_code" as needed
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
