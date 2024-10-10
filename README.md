@@ -2,9 +2,15 @@
 
 This project consists of three services written in Python, Go, and C++.
 
-Each service fetches energy prices from the [Spot Hinta API](https://api.spot-hinta.fi/swagger/ui).
+Each service fetches energy prices of the next hours from the [Spot Hinta API](https://api.spot-hinta.fi/swagger/ui).
 
-
+## Steps
+- [x] Find the correct API endpoint.
+- [x] Call the API from Python, C++, and Go
+- [x] Build a docker file for them.
+- [x] Deploy to Kubernetes
+- [ ] Add load balancing
+- [ ] Add caching ([source](https://www.lonti.com/blog/using-caching-strategies-to-improve-api-performance))
 
 ## Running Locally
 
