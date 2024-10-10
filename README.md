@@ -22,16 +22,14 @@ pip install -r requirements.txt
 python server.py
 ```
 
-Open your browser and navigate to `http://localhost:8080`. Use the buttons to run `code.py` or `simple_code.py`.
+Open your browser and navigate to `http://localhost:8080`. Use the buttons to run `code.py`.
 
 ### Go
 
 ```bash
 go mod init .
 go build -o app code.go
-go build -o simple_app simple_code.go
 ./app
-./simple_app
 ```
 
 ### C++
@@ -44,9 +42,7 @@ wget https://github.com/nlohmann/json/releases/download/v3.11.2/json.hpp -O json
 
 ```bash
 g++ code.cpp -o app -lcurl -std=c++11 -I.
-g++ simple_code.cpp -o simple_app -lcurl -std=c++11 -I.
 ./app
-./simple_app
 ```
 
 ## Using Docker
@@ -64,9 +60,9 @@ docker run --rm -d -p 8080:8080 --name myapp-python myapp-python
 ```
 
   ```bash
-  docker run --rm -e SCRIPT=code -p 8080:8080 --name myapp-go myapp-go
+  docker run --rm -p 8080:8080 --name myapp-go myapp-go
   ```
 
   ```bash
-  docker run --rm -e SCRIPT=simple_code -p 8080:8080 --name myapp-go-simple myapp-go
+  docker run --rm -p 8080:8080 --name myapp-cpp myapp-cpp
   ```
