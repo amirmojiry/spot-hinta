@@ -33,4 +33,4 @@ spec:
             cpu: "500m"
         env:
         - name: SCRIPT
-          value: "code" # Change to "simple_code" if needed
+          value: "code"
