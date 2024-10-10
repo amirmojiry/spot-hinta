@@ -20,7 +20,8 @@ spec:
     spec:
       containers:
       - name: python-container
-        image: yourregistry/myapp-python:latest
+        image: myapp-python:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         resources:
@@ -30,3 +31,6 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        env:
+        - name: SCRIPT
+          value: "code" # Change to "simple_code" if needed

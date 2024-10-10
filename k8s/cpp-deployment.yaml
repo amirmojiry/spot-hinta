@@ -20,10 +20,8 @@ spec:
     spec:
       containers:
       - name: cpp-container
-        image: yourregistry/myapp-cpp:latest
-        env:
-        - name: SCRIPT
-          value: "code" # Change to "simple_code" if needed
+        image: myapp-cpp:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         resources:
@@ -33,3 +31,6 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        env:
+        - name: SCRIPT
+          value: "code" # Change to "simple_code" if needed

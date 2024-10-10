@@ -9,5 +9,5 @@ spec:
     app: myapp
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 80        # External Port
+      targetPort: 80  # Container Port
