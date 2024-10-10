@@ -23,10 +23,8 @@ class MyHandler(BaseHTTPRequestHandler):
 
         if script == 'code.py':
             output = subprocess.check_output(['python3', 'code.py'], text=True)
-        elif script == 'simple_code.py':
-            output = subprocess.check_output(['python3', 'simple_code.py'], text=True)
         else:
-            output = ''
+            output = 'No valid script specified.'
 
         safe_output = html.escape(output)
         response = f'<pre>{safe_output}</pre>'
